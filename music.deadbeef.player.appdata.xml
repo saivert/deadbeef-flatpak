@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component type="desktop">
+  <id>music.deadbeef.player.desktop</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-2.0+</project_license>
+  <name>DeaDBeeF</name>
+
+  <summary>Music Player</summary>
+
+  <description>
+      <p>DeaDBeeF (as in 0xDEADBEEF) is a modular audio player for GNU/Linux, *BSD, OpenSolaris, macOS, and other UNIX-like systems.</p>
+      <p>DeaDBeeF lets you play variety of audio formats, convert between them, customize the UI almost any way you want, and use many additional plugins which can extend it even more.</p>
+  </description>
+  <url type="homepage">http://deadbeef.sf.net/</url>
+  <url type="bugtracker">https://github.com/deadbeef-player/deadbeef/issues</url>
+  <url type="help">https://github.com/deadbeef-player/deadbeef/wiki</url>
+  <screenshots>
+    <screenshot type="default">
+      <image>http://deadbeef.sourceforge.net/title_screenshot.png</image>
+    </screenshot>
+  </screenshots>
+  <provides>
+    <binary>deadbeef</binary>
+  </provides>
+</component>

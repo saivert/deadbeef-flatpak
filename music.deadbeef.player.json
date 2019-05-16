@@ -1,0 +1,41 @@
+{
+    "app-id": "music.deadbeef.player",
+    "runtime": "org.freedesktop.Platform",
+    "runtime-version": "18.08",
+    "sdk": "org.freedesktop.Sdk",
+    "command": "/app/deadbeef",
+    "finish-args": [
+        "--socket=x11",
+        "--socket=wayland",
+        "--share=network",
+        "--socket=pulseaudio",
+        "--filesystem=xdg-music"
+    ],
+    "modules": [
+        {
+            "name": "deadbeef",
+            "buildsystem": "simple",
+            "build-commands": [
+                "cp -r * /app/",
+                "install -D music.deadbeef.player.appdata.xml /app/share/metainfo/music.deadbeef.player.appdata.xml",
+                "install -D music.deadbeef.player.desktop /app/share/applications/music.deadbeef.player.desktop",
+                "install -D deadbeef.png /app/share/icons/hicolor/32x32/apps/deadbeef.png"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "path": "deadbeef-static_1.8.0-1_x86_64.tar.bz2"
+                },
+                {
+                    "type": "file",
+                    "path": "music.deadbeef.player.appdata.xml"
+                },
+                {
+                    "type": "file",
+                    "path": "music.deadbeef.player.desktop"
+                }
+
+            ]
+        }
+    ]
+}
