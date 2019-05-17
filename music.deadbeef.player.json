@@ -11,7 +11,8 @@
         "--share=network",
         "--socket=pulseaudio",
         "--own-name=org.mpris.MediaPlayer2.DeaDBeeF",
-        "--filesystem=xdg-music"
+        "--filesystem=xdg-music",
+        "--filesystem=~/.local/lib64/deadbeef"
     ],
     "rename-icon": "deadbeef",
     "modules": [
