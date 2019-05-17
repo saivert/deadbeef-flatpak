@@ -5,10 +5,12 @@
     "sdk": "org.freedesktop.Sdk",
     "command": "/app/deadbeef",
     "finish-args": [
+        "--share=ipc",
         "--socket=x11",
         "--socket=wayland",
         "--share=network",
         "--socket=pulseaudio",
+        "--own-name=org.mpris.MediaPlayer2.DeaDBeeF",
         "--filesystem=xdg-music"
     ],
     "modules": [
