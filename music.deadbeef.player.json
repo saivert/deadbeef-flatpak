@@ -24,7 +24,9 @@
             "sources": [
                 {
                     "type": "archive",
-                    "path": "deadbeef-static_1.8.0-1_x86_64.tar.bz2"
+                    "dest-filename": "deadbeef-static_1.8.0-1_x86_64.tar.bz2",
+                    "url": "https://sourceforge.net/projects/deadbeef/files/travis/linux/1.8.0/deadbeef-static_1.8.0-1_x86_64.tar.bz2",
+                    "sha256": "57199b46aeca3ab057d97838e551a669218d6eb9638427c9cc6018686d888912"
                 },
                 {
                     "type": "file",
