@@ -15,6 +15,7 @@
         "--filesystem=~/.local/lib64/deadbeef"
     ],
     "rename-icon": "deadbeef",
+    "cleanup": [ "/plugins/ddb_gui_GTK2.so", "/plugins/*_gtk2.so" ],
     "modules": [
         {
             "name": "deadbeef",
