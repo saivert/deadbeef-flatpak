@@ -13,6 +13,7 @@
         "--own-name=org.mpris.MediaPlayer2.DeaDBeeF",
         "--filesystem=xdg-music"
     ],
+    "rename-icon": "deadbeef",
     "modules": [
         {
             "name": "deadbeef",
