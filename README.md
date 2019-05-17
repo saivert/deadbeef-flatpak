@@ -1,7 +1,5 @@
 # deadbeef-flatpak
 
-In order to build this you need to download the static portable build of DeaDBeeF from here:
+This is a quick and dirty flatpak that uses the static portable build of DeaDBeeF.
 
-https://sourceforge.net/projects/deadbeef/files/travis/linux/1.8.0/deadbeef-static_1.8.0-1_x86_64.tar.bz2/download
-
-
+DeaDBeeF static build is not built to support use of xdg-desktop-portal yet so currently only the the ~/Music folder (xdg-music) is made available.
