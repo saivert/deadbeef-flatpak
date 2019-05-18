@@ -4,7 +4,9 @@
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-2.0+</project_license>
   <name>DeaDBeeF</name>
-
+  <releases>
+    <release version="1.8.0" date="2019-04-06"/>
+  </releases>
   <summary>Music Player</summary>
 
   <description>
