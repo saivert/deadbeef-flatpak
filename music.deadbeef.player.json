@@ -3,7 +3,7 @@
     "runtime": "org.gnome.Platform",
     "runtime-version": "3.32",
     "sdk": "org.gnome.Sdk",
-    "command": "deadbeef",
+    "command": "deadbeef-wrapper",
     "finish-args": [
         "--share=ipc",
         "--socket=x11",
@@ -19,8 +19,19 @@
         "--env=DCONF_USER_CONFIG_DIR=.config/dconf"
     ],
     "rename-icon": "deadbeef",
-    "cleanup": [ "/plugins/ddb_gui_GTK2.so", "/plugins/*_gtk2.so", "/plugins/pulse.so", "/plugins/alsa.so" ],
+    "cleanup": [ "/include", "*.la" ],
     "modules": [
+        {
+            "name": "libjansson",
+            "buildsystem": "autotools",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "http://www.digip.org/jansson/releases/jansson-2.12.tar.gz",
+                    "sha256": "5f8dec765048efac5d919aded51b26a32a05397ea207aa769ff6b53c7027d2c9"
+                }
+            ]
+        },
         {
             "name": "libopus",
             "buildsystem": "autotools",
@@ -67,21 +78,20 @@
         },
         {
             "name": "deadbeef",
-            "buildsystem": "simple",
+            "buildsystem": "autotools",
+            "config-opts": ["--disable-alsa", "--disable-pulse", "--disable-oss"],
+            "build-options" : { "cflags": "-DUSE_GTK_NATIVE_FILE_CHOOSER" },
             "build-commands": [
-                "cp -r * /app/",
                 "install -D music.deadbeef.player.appdata.xml /app/share/metainfo/music.deadbeef.player.appdata.xml",
                 "install -D music.deadbeef.player.desktop /app/share/applications/music.deadbeef.player.desktop",
-                "install -D deadbeef.png /app/share/icons/hicolor/32x32/apps/deadbeef.png",
-                "mkdir -p /app/bin",
-                "install deadbeef-wrapper.sh /app/bin/deadbeef"
+                "install -D deadbeef-wrapper.sh /app/bin/deadbeef-wrapper",
+                "sed -i 's:Exec=deadbeef:Exec=deadbeef-wrapper:' /app/share/applications/music.deadbeef.player.desktop"
             ],
             "sources": [
                 {
-                    "type": "archive",
-                    "dest-filename": "deadbeef-static_1.8.0-1_x86_64.tar.bz2",
-                    "url": "https://sourceforge.net/projects/deadbeef/files/travis/linux/1.8.0/deadbeef-static_1.8.0-1_x86_64.tar.bz2",
-                    "sha256": "57199b46aeca3ab057d97838e551a669218d6eb9638427c9cc6018686d888912"
+                    "type": "git",
+                    "url": "https://github.com/DeaDBeeF-Player/deadbeef.git",
+                    "tag": "1.8.0"
                 },
                 {
                     "type": "file",
@@ -96,7 +106,7 @@
                     "if ! test -f $XDG_CONFIG_HOME/deadbeef/config; then",
                     "echo \"output_plugin PulseAudio output plugin version 2\" > $XDG_CONFIG_HOME/deadbeef/config",
                     "fi",
-                    "exec /app/deadbeef \"$@\""
+                    "exec /app/bin/deadbeef \"$@\""
                   ],
                   "dest-filename" : "deadbeef-wrapper.sh",
                   "type" : "script"
@@ -104,21 +114,9 @@
             ]
         },
         {
-            "name": "deadbeef-headers",
-            "buildsystem": "simple",
-            "build-commands": ["mkdir -p /app/include/deadbeef", "cp -r deadbeef /app/include/"],
-            "sources": [
-                {
-                    "type": "dir",
-                    "path": "headers"
-                }
-            ]
-        },
-        {
             "name": "pulse2",
             "buildsystem": "meson",
             "config-opts": ["--buildtype=release"],
-            "post-install": ["mv /app/lib/deadbeef/pulse2.so /app/plugins/"],
             "sources": [
                 {
                     "type": "git",
