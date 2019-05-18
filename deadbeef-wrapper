@@ -1,5 +1,0 @@
-#!/bin/bash
-if ! test -f $XDG_CONFIG_HOME/deadbeef/config; then
-echo "output_plugin PulseAudio output plugin version 2" > $XDG_CONFIG_HOME/deadbeef/config
-fi
-exec /app/deadbeef

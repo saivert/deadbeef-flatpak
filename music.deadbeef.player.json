@@ -3,7 +3,7 @@
     "runtime": "org.gnome.Platform",
     "runtime-version": "3.32",
     "sdk": "org.gnome.Sdk",
-    "command": "/app/deadbeef-wrapper",
+    "command": "deadbeef",
     "finish-args": [
         "--share=ipc",
         "--socket=x11",
@@ -28,7 +28,9 @@
                 "cp -r * /app/",
                 "install -D music.deadbeef.player.appdata.xml /app/share/metainfo/music.deadbeef.player.appdata.xml",
                 "install -D music.deadbeef.player.desktop /app/share/applications/music.deadbeef.player.desktop",
-                "install -D deadbeef.png /app/share/icons/hicolor/32x32/apps/deadbeef.png"
+                "install -D deadbeef.png /app/share/icons/hicolor/32x32/apps/deadbeef.png",
+                "mkdir /app/bin",
+                "install deadbeef-wrapper.sh /app/bin/deadbeef"
             ],
             "sources": [
                 {
@@ -46,10 +48,15 @@
                     "path": "music.deadbeef.player.desktop"
                 },
                 {
-                    "type": "file",
-                    "path": "deadbeef-wrapper"
+                  "commands" : [
+                    "if ! test -f $XDG_CONFIG_HOME/deadbeef/config; then",
+                    "echo \"output_plugin PulseAudio output plugin version 2\" > $XDG_CONFIG_HOME/deadbeef/config",
+                    "fi",
+                    "exec /app/deadbeef \"$@\""
+                  ],
+                  "dest-filename" : "deadbeef-wrapper.sh",
+                  "type" : "script"
                 }
-
             ]
         },
         {
