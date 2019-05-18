@@ -22,6 +22,50 @@
     "cleanup": [ "/plugins/ddb_gui_GTK2.so", "/plugins/*_gtk2.so", "/plugins/pulse.so", "/plugins/alsa.so" ],
     "modules": [
         {
+            "name": "libopus",
+            "buildsystem": "autotools",
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/xiph/opus.git",
+                    "tag": "v1.3.1"
+                }
+            ]
+        },
+        {
+            "name": "opusfile",
+            "buildsystem": "autotools",
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/xiph/opusfile.git",
+                    "tag": "v0.11"
+                }
+            ]
+        },
+        {
+            "name": "libopusenc",
+            "buildsystem": "autotools",
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/xiph/libopusenc.git",
+                    "tag": "v0.2.1"
+                }
+            ]
+        },
+        {
+            "name": "opus-tools",
+            "buildsystem": "autotools",
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/xiph/opus-tools.git",
+                    "tag": "v0.2"
+                }
+            ]
+        },
+        {
             "name": "deadbeef",
             "buildsystem": "simple",
             "build-commands": [
@@ -29,7 +73,7 @@
                 "install -D music.deadbeef.player.appdata.xml /app/share/metainfo/music.deadbeef.player.appdata.xml",
                 "install -D music.deadbeef.player.desktop /app/share/applications/music.deadbeef.player.desktop",
                 "install -D deadbeef.png /app/share/icons/hicolor/32x32/apps/deadbeef.png",
-                "mkdir /app/bin",
+                "mkdir -p /app/bin",
                 "install deadbeef-wrapper.sh /app/bin/deadbeef"
             ],
             "sources": [
