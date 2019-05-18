@@ -1,9 +1,9 @@
 {
     "app-id": "music.deadbeef.player",
-    "runtime": "org.freedesktop.Platform",
-    "runtime-version": "18.08",
-    "sdk": "org.freedesktop.Sdk",
-    "command": "/app/deadbeef",
+    "runtime": "org.gnome.Platform",
+    "runtime-version": "3.32",
+    "sdk": "org.gnome.Sdk",
+    "command": "/app/deadbeef-wrapper",
     "finish-args": [
         "--share=ipc",
         "--socket=x11",
@@ -12,10 +12,14 @@
         "--socket=pulseaudio",
         "--own-name=org.mpris.MediaPlayer2.DeaDBeeF",
         "--filesystem=xdg-music",
-        "--filesystem=~/.local/lib64/deadbeef"
+        "--filesystem=~/.local/lib64/deadbeef",
+        "--talk-name=ca.desrt.dconf",
+        "--filesystem=xdg-run/dconf",
+        "--filesystem=~/.config/dconf:ro",
+        "--env=DCONF_USER_CONFIG_DIR=.config/dconf"
     ],
     "rename-icon": "deadbeef",
-    "cleanup": [ "/plugins/ddb_gui_GTK2.so", "/plugins/*_gtk2.so" ],
+    "cleanup": [ "/plugins/ddb_gui_GTK2.so", "/plugins/*_gtk2.so", "/plugins/pulse.so", "/plugins/alsa.so" ],
     "modules": [
         {
             "name": "deadbeef",
@@ -40,8 +44,35 @@
                 {
                     "type": "file",
                     "path": "music.deadbeef.player.desktop"
+                },
+                {
+                    "type": "file",
+                    "path": "deadbeef-wrapper"
                 }
 
+            ]
+        },
+        {
+            "name": "deadbeef-headers",
+            "buildsystem": "simple",
+            "build-commands": ["mkdir -p /app/include/deadbeef", "cp -r deadbeef /app/include/"],
+            "sources": [
+                {
+                    "type": "dir",
+                    "path": "headers"
+                }
+            ]
+        },
+        {
+            "name": "pulse2",
+            "buildsystem": "meson",
+            "config-opts": ["--buildtype=release"],
+            "post-install": ["mv /app/lib/deadbeef/pulse2.so /app/plugins/"],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/saivert/ddb_output_pulse2.git"
+                }
             ]
         }
     ]
