@@ -94,7 +94,6 @@
             "name": "deadbeef",
             "buildsystem": "autotools",
             "config-opts": ["--disable-alsa", "--disable-pulse", "--disable-oss"],
-            "build-options" : { "cflags": "-DUSE_GTK_NATIVE_FILE_CHOOSER" },
             "build-commands": [
                 "install -D music.deadbeef.player.appdata.xml /app/share/metainfo/music.deadbeef.player.appdata.xml",
                 "install -D music.deadbeef.player.desktop /app/share/applications/music.deadbeef.player.desktop",
