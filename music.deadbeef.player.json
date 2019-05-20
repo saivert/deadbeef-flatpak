@@ -1,5 +1,6 @@
 {
     "app-id": "music.deadbeef.player",
+    "branch": "stable",
     "runtime": "org.gnome.Platform",
     "runtime-version": "3.32",
     "sdk": "org.gnome.Sdk",
