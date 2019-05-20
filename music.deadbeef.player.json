@@ -88,6 +88,9 @@
                 "install -D deadbeef-wrapper.sh /app/bin/deadbeef-wrapper",
                 "sed -i 's:Exec=deadbeef:Exec=deadbeef-wrapper:' /app/share/applications/music.deadbeef.player.desktop"
             ],
+            "post-install": [
+                "cp icons/32x32/deadbeef.png /"
+            ],
             "sources": [
                 {
                     "type": "git",
