@@ -10,3 +10,4 @@ You can allow full filesystem and network share access by using overrides like s
 
     $ flatpak --user override --filesystem=host --filesystem=xdg-run/gvfs music.deadbeef.player
 
+This flatpak uses my improved pulseaudio output plugin and does not include the one included with DeaDBeeF by default, nor does it include ALSA.
