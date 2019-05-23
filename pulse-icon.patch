@@ -1,0 +1,13 @@
+diff --git a/pulse.c b/pulse.c
+index 70ebc7c..3229e59 100644
+--- a/pulse.c
++++ b/pulse.c
+@@ -188,7 +188,7 @@ static pa_proplist *_create_stream_proplist(void)
+     rc = pa_proplist_sets(pl, PA_PROP_MEDIA_ROLE, "music");
+     BUG_ON(rc);
+ 
+-    rc = pa_proplist_sets(pl, PA_PROP_MEDIA_ICON_NAME, "deadbeef");
++    rc = pa_proplist_sets(pl, PA_PROP_MEDIA_ICON_NAME, "music.deadbeef.player");
+     BUG_ON(rc);
+ 
+     return pl;

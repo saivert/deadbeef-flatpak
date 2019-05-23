@@ -126,6 +126,10 @@
                   ],
                   "dest-filename" : "deadbeef-wrapper.sh",
                   "type" : "script"
+                },
+                {
+                    "type": "patch",
+                    "path": "pl-popup.patch"
                 }
             ]
         },
@@ -137,6 +141,10 @@
                 {
                     "type": "git",
                     "url": "https://github.com/saivert/ddb_output_pulse2.git"
+                },
+                {
+                    "type": "patch",
+                    "path": "pulse-icon.patch"
                 }
             ]
         }
