@@ -4,7 +4,7 @@
     "runtime": "org.gnome.Platform",
     "runtime-version": "3.32",
     "sdk": "org.gnome.Sdk",
-    "command": "deadbeef-wrapper",
+    "command": "deadbeef",
     "finish-args": [
         "--share=ipc",
         "--socket=x11",
@@ -97,17 +97,16 @@
             "build-options" : { "cflags": "-DUSE_GTK_NATIVE_FILE_CHOOSER" },
             "build-commands": [
                 "install -D music.deadbeef.player.appdata.xml /app/share/metainfo/music.deadbeef.player.appdata.xml",
-                "install -D music.deadbeef.player.desktop /app/share/applications/music.deadbeef.player.desktop",
-                "install -D deadbeef-wrapper.sh /app/bin/deadbeef-wrapper",
-                "sed -i 's:Exec=deadbeef:Exec=deadbeef-wrapper:' /app/share/applications/music.deadbeef.player.desktop"
+                "install -D music.deadbeef.player.desktop /app/share/applications/music.deadbeef.player.desktop"
             ],
             "post-install": [
-                "cp icons/32x32/deadbeef.png /"
+                "cp icons/32x32/deadbeef.png /app/"
             ],
             "sources": [
                 {
                     "type": "git",
-                    "url": "https://github.com/DeaDBeeF-Player/deadbeef.git"
+                    "url": "https://github.com/DeaDBeeF-Player/deadbeef.git",
+                    "commit": "bbff7bbb80e041fadd91624f1ae11b97ddbbbc1c"
                 },
                 {
                     "type": "file",
@@ -118,18 +117,16 @@
                     "path": "music.deadbeef.player.desktop"
                 },
                 {
-                  "commands" : [
-                    "if ! test -f $XDG_CONFIG_HOME/deadbeef/config; then",
-                    "echo \"output_plugin pulseaudio2\" > $XDG_CONFIG_HOME/deadbeef/config",
-                    "fi",
-                    "exec /app/bin/deadbeef \"$@\""
-                  ],
-                  "dest-filename" : "deadbeef-wrapper.sh",
-                  "type" : "script"
+                    "type": "patch",
+                    "path": "pl-popup.patch"
                 },
                 {
                     "type": "patch",
-                    "path": "pl-popup.patch"
+                    "path": "plcommon-coverart-release-fix.patch"
+                },
+                {
+                    "type": "patch",
+                    "path": "default-output-plugin.patch"
                 }
             ]
         },

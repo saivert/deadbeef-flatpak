@@ -1,0 +1,24 @@
+diff --git a/plugins/gtkui/plcommon.c b/plugins/gtkui/plcommon.c
+index 8dca99e7..a580007b 100644
+--- a/plugins/gtkui/plcommon.c
++++ b/plugins/gtkui/plcommon.c
+@@ -163,17 +163,11 @@ create_col_info (DdbListview *listview, int id) {
+     return info;
+ }
+ 
+-static gboolean
+-coverart_release_cb (void *user_data) {
++static void
++coverart_release (void *user_data) {
+     col_info_t *info = user_data;
+     g_object_unref(info->listview->list);
+     free(user_data);
+-    return FALSE;
+-}
+-
+-static void
+-coverart_release (void *user_data) {
+-    g_idle_add(coverart_release_cb, user_data);
+ }
+ 
+ void

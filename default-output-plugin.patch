@@ -1,0 +1,13 @@
+diff --git a/plugins.c b/plugins.c
+index 6b620085..0f24102e 100644
+--- a/plugins.c
++++ b/plugins.c
+@@ -1370,7 +1370,7 @@ _select_output_plugin (void) {
+ #ifdef OSX_APPBUNDLE
+     conf_get_str ("output_plugin", "coreaudio", outplugname, sizeof (outplugname));
+ #else
+-    conf_get_str ("output_plugin", "alsa", outplugname, sizeof (outplugname));
++    conf_get_str ("output_plugin", "pulseaudio2", outplugname, sizeof (outplugname));
+ #endif
+     for (int i = 0; g_output_plugins[i]; i++) {
+         DB_output_t *p = g_output_plugins[i];
