@@ -106,7 +106,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/DeaDBeeF-Player/deadbeef.git",
-                    "commit": "bbff7bbb80e041fadd91624f1ae11b97ddbbbc1c"
+                    "commit": "5c68f92bb2ba7f471ed4528cf7be9eb8cd42084e"
                 },
                 {
                     "type": "file",
@@ -115,10 +115,6 @@
                 {
                     "type": "file",
                     "path": "music.deadbeef.player.desktop"
-                },
-                {
-                    "type": "patch",
-                    "path": "pl-popup.patch"
                 },
                 {
                     "type": "patch",
