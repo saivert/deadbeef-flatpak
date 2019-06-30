@@ -5,6 +5,35 @@
   <project_license>GPL-2.0+</project_license>
   <name>DeaDBeeF</name>
   <releases>
+    <release version="1.8.1" date="2019-06-23">
+      <description>
+        <p>Changelog since 1.8.0:</p>
+
+        <ul>
+        <li>Fixed audio freeze while sorting</li>
+        <li>Fixed crash when resuming playback of a file that's been deleted</li>
+        <li>Fixed error messages when loading PLS playlist with relative paths</li>
+        <li>Fixed adjusting shuffle queue after a user initiated track change</li>
+        <li>Write Album Artist field into Ogg files as "ALBUMARTIST"</li>
+        <li>Load external album covers before embedded</li>
+        <li>Removed the unmaintained sndio plugin</li>
+        <li>Fixed localization of status bar</li>
+        <li>Added experimental subgrouping support in playlist, via using ||| separator for each subsequent nested group, when using Group by -> Custom (by ToadKing)</li>
+        <li>Added new title formatting functions $stripprefix and $swapprefix (by ToadKing)</li>
+        <li>Changed supereq DSP configuration to be more compact horizontally and to have more slider precision</li>
+        <li>Updated Repeat and Shuffle hotkey names to match the menus</li>
+        <li>Fixed rounding bug of total playtime in statusbar</li>
+        <li>Fixed design mode splitter handles dragging beyond the window edges</li>
+        <li>Fixed setting album art size based on larger dimension (by ToadKing)</li>
+        <li>Fixed regression causing custom layouts with splitters look wrong</li>
+        <li>Added FLAC plugin option to ignore corrupted stream errors</li>
+        <li>Fixed supereq reentrancy bug, potentially causing crash after changing audio output configuration</li>
+        <li>Fixed reloading replaygain info</li>
+        <li>Fixed writing replaygain info to APEv2 tags</li>
+        </ul>
+
+​      </description>
+    </release>
     <release version="1.8.0" date="2019-04-06"/>
   </releases>
   <summary>Music Player</summary>
