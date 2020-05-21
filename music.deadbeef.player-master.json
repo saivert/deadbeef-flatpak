@@ -2,7 +2,7 @@
     "app-id": "music.deadbeef.player",
     "branch": "master",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "3.32",
+    "runtime-version": "3.36",
     "sdk": "org.gnome.Sdk",
     "command": "deadbeef",
     "finish-args": [
@@ -23,6 +23,10 @@
     "rename-icon": "deadbeef",
     "cleanup": [ "/include", "*.la" ],
     "modules": [
+        "shared-modules/intltool/intltool-0.51.json",
+        {
+          "name": "intltool"
+        },
         {
             "name": "libjansson",
             "buildsystem": "autotools",
@@ -106,7 +110,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/DeaDBeeF-Player/deadbeef.git",
-                    "commit": "fd16773638401ce5cf254532b252c30dcb5933ab"
+                    "commit": "a6ac452135814c3ff64206440433a085a10bb36c"
                 },
                 {
                     "type": "file",
@@ -115,10 +119,6 @@
                 {
                     "type": "file",
                     "path": "music.deadbeef.player.desktop"
-                },
-                {
-                    "type": "patch",
-                    "path": "plcommon-coverart-release-fix.patch"
                 },
                 {
                     "type": "patch",

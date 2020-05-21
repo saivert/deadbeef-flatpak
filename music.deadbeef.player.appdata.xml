@@ -4,7 +4,77 @@
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-2.0+</project_license>
   <name>DeaDBeeF</name>
+  <content_rating type="oars-1.1" />
   <releases>
+    <release version="1.8.3" date="2020-03-19">
+      <description>
+        <p>changelog since 1.8.2</p>
+
+        <ul>
+        <li>Fixed a CD Text reading issue</li>
+        <li>Added title formatting functions: len2, longer, longest, padcut, padcut_right, progress, progress2, right, roman, rot13, shortest, strchr, stricmp, strrchr, strstr, substr, tab, trim (esainane@github)</li>
+        <li>Fixed a bunch of memory bugs in title formatting (esainane@github)</li>
+        <li>Added optional automatic playlist sorting (kpcee@github)</li>
+        <li>Added title formatting value %playback_time_ms% (nonoo@github)</li>
+        <li>Added an option to start deadbeef hidden / minimized to tray (kpcee@github)</li>
+        <li>Fixed %_path_raw% to always produce an URI (Evgeny Kravchenko)</li>
+        <li>Fixed rounding of %selection_playback_time% (kpcee@github)</li>
+        <li>Fixed a memory leak in AAC plugin</li>
+        <li>Fixed crash when removing playlist from UI layout (Nicolai Syvertsen)</li>
+        <li>Added logging of plugin load errors</li>
+        <li>Added an option to replaygain scan all unscanned files in playlist (kpcee@github)</li>
+        <li>Added detecting and ignoring freeformat MP3 files</li>
+        <li>Removed logging of playlist load debug messages</li>
+        <li>Fixed playback stuttering after deleting files</li>
+        <li>Fixed deleting files using playlist tab context menu</li>
+        <li>Fixed saving playlist after deleting files</li>
+        <li>Fixed saving playlist after replaygain scan</li>
+        <li>Fixed a bunch of crashes and memory leaks when opening playlist context menu (Christian Boxdörfer)</li>
+        <li>Fixed a performance issue when seeking in MP3 files</li>
+        <li>Fixed a bunch of issues with Repeat and Shuffle implementation</li>
+        <li>Fixed handling of in-stream HTTP headers for streaming audio</li>
+        <li>Fixed a bunch of bugs in HTTP stream interruption</li>
+        <li>Fixed semicolon-separated values handling in track properties dialog</li>
+        <li>Fixed choosing next track when the currently playing track was removed</li>
+        <li>Fixed seeking out of bounds using hotkeys</li>
+        <li>Fixed saving opus header gain when no replaygain info is present</li>
+        <li>Improved remove from disk dialog (kpcee@github)</li>
+        <li>Fixed ID3v2 TLAN (LANGUAGE) and TMED (MEDIA TYPE) mapping to be consistent with other formats</li>
+        <li>Fixed replaygain bug causing it to be ON by default</li>
+        <li>Fixed bug in elapsed time calculation in replaygain scanner UI</li>
+        <li>Fixed a stack overflow bug when writing ID3v1</li>
+        <li>Added ID3v2 POPM rating support, both reading and writing</li>
+        <li>Fixed an issue with splitters not reaching the view edges</li>
+        <li>Fixed single-quote escaping issue in ShellExec</li>
+        <li>Fixed Add Location dialog not adding URLs</li>
+        <li>Fixed ffmpeg file handle leak</li>
+        <li>Added remove playlist confirmation dialog in GTK UI (kpcee@github)</li>
+        <li>Fixed DTS channel count metadata</li>
+        <li>Fixed loading MP3 album art of APIC type=0 (Other)</li>
+        <li>Added album art fallback to png (jakesfr@github)</li>
+        <li>Fixed ALSA hanging after audio format change</li>
+        <li>Fixed handling "ICY 200 OK" status in vfs-curl (thesame)</li>
+        <li>Improved EQ UI layout in the DSP settings</li>
+        <li>Fixed streamer being stuck in buffering mode when trying to play deleted files</li>
+        </ul>
+      </description>
+    </release>
+
+      <release version="1.8.2" date="2019-08-01">
+      <description>
+        <p>Changelog since 1.8.1:</p>
+
+        <ul>
+        <li>Volume control from command line supports increment syntax (by eauno1re@github)</li>
+        <li>Fixed writing multi-value fields into FLAC tags</li>
+        <li>Map ALBUMARTIST field to ALBUM ARTIST field in FLAC</li>
+        <li>Fixed sound output plugin selection bug in GTK UI</li>
+        <li>Fixed crash when opening files of 0 size</li>
+        <li>Fixed UI freeze when nullout plugin is selected</li>
+        <li>Fixed a regression in restoring the last selected folder in GTK file chooser</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.8.1" date="2019-06-23">
       <description>
         <p>Changelog since 1.8.0:</p>
@@ -47,7 +117,7 @@
   <url type="help">https://github.com/deadbeef-player/deadbeef/wiki</url>
   <screenshots>
     <screenshot type="default">
-      <image>http://deadbeef.sourceforge.net/title_screenshot.png</image>
+      <image>https://saivert.com/files/deadbeef_screenshot.png</image>
     </screenshot>
   </screenshots>
   <provides>
