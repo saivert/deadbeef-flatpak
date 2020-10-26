@@ -165,7 +165,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/DeaDBeeF-Player/deadbeef.git",
-                    "commit": "a8f7606268096aa61dc18c7045e3c3b59b01bb96"
+                    "commit": "530bc276ea1d944e856083bcd59d56160629a240"
                 },
                 {
                     "type": "file",
@@ -178,10 +178,6 @@
                 {
                     "type": "patch",
                     "path": "default-output-plugin.patch"
-                },
-                {
-                    "type": "patch",
-                    "path": "filterlist.patch"
                 }
             ]
         },
