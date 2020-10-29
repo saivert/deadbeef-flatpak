@@ -102,6 +102,9 @@
                 "install -D music.deadbeef.player.appdata.xml /app/share/metainfo/music.deadbeef.player.appdata.xml",
                 "install -D music.deadbeef.player.desktop /app/share/applications/music.deadbeef.player.desktop"
             ],
+            "build-options" : {
+                "cflags": "-DUSE_GTK_NATIVE_FILE_CHOOSER"
+            },
             "post-install": [
                 "cp icons/32x32/deadbeef.png /app/",
                 "rm /app/share/applications/deadbeef.desktop"
@@ -110,7 +113,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/DeaDBeeF-Player/deadbeef.git",
-                    "tag": "1.8.3"
+                    "tag": "1.8.4"
                 },
                 {
                     "type": "file",
@@ -123,6 +126,10 @@
                 {
                     "type": "patch",
                     "path": "default-output-plugin.patch"
+                },
+                {
+                    "type": "patch",
+                    "path": "filterlist.patch"
                 }
             ]
         },

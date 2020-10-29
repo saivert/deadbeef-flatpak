@@ -6,6 +6,30 @@
   <name>DeaDBeeF</name>
   <content_rating type="oars-1.1" />
   <releases>
+    <release version="1.8.4" date="2020-07-28">
+      <description>
+        <p>changelog since 1.8.3</p>
+
+        <ul>
+          <li>Soundtouch plugin has been updated, and is now included in the releases</li>
+          <li>Added %last_modified% title formatting keyword (Cristian Ciocaltea)</li>
+          <li>Fixed stack overflow bug in converter</li>
+          <li>Fixed buffer overflow bug in mp3 parser</li>
+          <li>Fixed handling of leading forward shash character in zipper file names</li>
+          <li>Fixed handling user-specified file mask in artwork plugin</li>
+          <li>Fixed CBR MP3 scanning performance</li>
+          <li>Fixed stack overflow in title formatting tint range calculation</li>
+          <li>Fixed pulseaudio plugin configuration backwards compatibility issue</li>
+          <li>Fixed last.fm scrobbling of streaming shoutcast tracks</li>
+          <li>Fixed deadlock when loading cuesheets which recursively reference themselves</li>
+          <li>Fixed a false-positive when detecting free format MP3 files</li>
+          <li>Fixed skipping unsupported fields in cuesheets</li>
+          <li>Fixed a regression which caused MP3 tag editing to crash when text can't be represented as CP1252</li>
+          <li>Fixed playback of certain network streams</li>
+          <li>Fixed handling of ID3v2 COMM frame content description data</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.8.3" date="2020-03-19">
       <description>
         <p>changelog since 1.8.2</p>
