@@ -15,6 +15,7 @@
         "--filesystem=xdg-music",
         "--filesystem=~/.local/lib64/deadbeef",
         "--talk-name=ca.desrt.dconf",
+        "--talk-name=org.freedesktop.Notifications",
         "--filesystem=xdg-run/dconf",
         "--filesystem=xdg-run/deadbeef:create",
         "--filesystem=~/.config/dconf:ro",
