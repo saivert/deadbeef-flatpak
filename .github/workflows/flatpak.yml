@@ -12,6 +12,7 @@ jobs:
       options: --privileged
     steps:
     - uses: actions/checkout@v2
+    - run: git submodule update --init --recursive
     - uses: bilelmoussaoui/flatpak-github-actions@v2
       with:
         bundle: "deadbeef.flatpak"
