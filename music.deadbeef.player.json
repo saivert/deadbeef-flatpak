@@ -15,12 +15,14 @@
         "--filesystem=xdg-music",
         "--filesystem=~/.local/lib64/deadbeef",
         "--talk-name=ca.desrt.dconf",
+        "--talk-name=org.freedesktop.Notifications",
         "--filesystem=xdg-run/dconf",
         "--filesystem=xdg-run/deadbeef:create",
         "--filesystem=~/.config/dconf:ro",
         "--env=DCONF_USER_CONFIG_DIR=.config/dconf"
     ],
     "rename-icon": "deadbeef",
+    "rename-desktop-file": "deadbeef.desktop",
     "cleanup": [ "/include", "*.la" ],
     "modules": [
         "shared-modules/intltool/intltool-0.51.json",
@@ -95,25 +97,76 @@
             ]
         },
         {
+            "name": "libblocksruntime",
+            "buildsystem": "autotools",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "http://cdn-fastly.deb.debian.org/debian/pool/main/libb/libblocksruntime/libblocksruntime_0.4.1.orig.tar.gz",
+                    "sha256": "7807e18d7d6cabd90f77c8b8a8ebd472516fa4ed6a02df82e0c33b1c5e112abc"
+                }
+            ]
+        },
+        {
+            "name": "libdispatch",
+            "buildsystem": "cmake",
+            "builddir": true,
+            "build-options": {
+                "env": {
+                    "CC": "clang",
+                    "CXX": "clang++"
+                }
+            },
+            "config-opts": [
+            	"-DCMAKE_BUILD_TYPE=RelWithDebInfo",
+            	"-DBlocksRuntime_INCLUDE_DIR=/app/include",
+            	"-DBlocksRuntime_LIBRARIES=/app/lib/libBlocksRuntime.so"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/apple/swift-corelibs-libdispatch.git",
+                    "tag": "swift-5.3-RELEASE"
+                },
+                {
+                    "type": "patch",
+                    "path": "libdispatch-patches/avoid-libkqueue.patch",
+                    "strip-components": 0
+                },
+                {
+                    "type": "patch",
+                    "path": "libdispatch-patches/remove-werror.patch",
+                    "strip-components": 0
+                },
+                {
+                    "type": "patch",
+                    "path": "libdispatch-patches/system-blocksruntime.patch",
+                    "strip-components": 0
+                }
+            ]
+        },
+        {
             "name": "deadbeef",
             "buildsystem": "autotools",
-            "config-opts": ["--disable-alsa", "--disable-pulse", "--disable-oss"],
-            "build-commands": [
-                "install -D music.deadbeef.player.appdata.xml /app/share/metainfo/music.deadbeef.player.appdata.xml",
-                "install -D music.deadbeef.player.desktop /app/share/applications/music.deadbeef.player.desktop"
-            ],
+            "config-opts": ["--disable-alsa", "--disable-pulse", "--disable-oss", "CC=clang", "CXX=clang++"],
             "build-options" : {
-                "cflags": "-DUSE_GTK_NATIVE_FILE_CHOOSER"
+                "cflags": "-DUSE_GTK_NATIVE_FILE_CHOOSER",
+                "env": {
+                    "CC": "clang",
+                    "CXX": "clang++"
+                }
             },
+            "build-commands": [
+                "install -D music.deadbeef.player.appdata.xml /app/share/metainfo/music.deadbeef.player.appdata.xml"
+            ],
             "post-install": [
-                "cp icons/32x32/deadbeef.png /app/",
-                "rm /app/share/applications/deadbeef.desktop"
+                "cp icons/32x32/deadbeef.png /app/"
             ],
             "sources": [
                 {
                     "type": "git",
                     "url": "https://github.com/DeaDBeeF-Player/deadbeef.git",
-                    "tag": "1.8.4"
+                    "tag": "1.8.5"
                 },
                 {
                     "type": "file",
@@ -126,10 +179,6 @@
                 {
                     "type": "patch",
                     "path": "default-output-plugin.patch"
-                },
-                {
-                    "type": "patch",
-                    "path": "filterlist.patch"
                 }
             ]
         },

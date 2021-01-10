@@ -6,6 +6,36 @@
   <name>DeaDBeeF</name>
   <content_rating type="oars-1.1" />
   <releases>
+    <release version="1.8.5" date="2021-01-09">
+      <description>
+        <p>changelog since 1.8.4</p>
+
+        <ul>
+          <li>Added the new ISO/IEC Base Media File Format library MP4P for working with MP4 files, which removes MP4FF dependency</li>
+          <li>Added support for additional per-track metadata in cuesheets</li>
+          <li>Added updating titlebar when displaying playback position (Nicolai Syvertsen)</li>
+          <li>Added a more convenient way to edit container widgets in design mode (Nicolai Syvertsen)</li>
+          <li>Fixed ALAC bug whiuch caused division by zero exception</li>
+          <li>Fixed cuesheet parser bug caused by unknown/unsupported field names</li>
+          <li>Fixed a series of bugs in the Adplug plugin</li>
+          <li>Fixed a bug when parsing MP3 Xing/Info header, reading incorrect packet count</li>
+          <li>Fixed a number of bugs in artwork plugin, especially affecting the Windows version (Jakub Wasylków, Keith Cancel)</li>
+          <li>Fixed a SHIFT-JIS detection bug which caused memory corruption</li>
+          <li>Fixed a bug when configuring keyboard shortcut involving Shift key</li>
+          <li>Fixed a bug with playlist becoming to small in certain UI layouts</li>
+          <li>Fixed a crash when deadbeef window becomes too small when using certain UI layouts</li>
+          <li>Fixed drawing playlist column separators in certain newer GTK themes</li>
+          <li>Fixed on-screen notification bug when too many notifications accumulated at the same time, spawning too many threads</li>
+          <li>Fixed a bug, causing the Band field to be missing from %artist% specifier when using title formatting</li>
+          <li>Fixed bugs leaking file handles in AAC and ALAC plugins (Thomas Jepp)</li>
+          <li>Fixed handling certain non-conformant S3M files</li>
+          <li>Fixed a bug where resizing the log window caused the auto-scroll to stop working (Nicolai Syvertsen)</li>
+          <li>Fixed album shuffle bug, causing the same album to repeat after the last track of the album has finished</li>
+          <li>Fixed shuffle bug causing short tracks to repeat</li>
+
+        </ul>
+      </description>
+    </release>
     <release version="1.8.4" date="2020-07-28">
       <description>
         <p>changelog since 1.8.3</p>
