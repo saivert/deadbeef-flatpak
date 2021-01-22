@@ -6,6 +6,16 @@
   <name>DeaDBeeF</name>
   <content_rating type="oars-1.1" />
   <releases>
+    <release version="1.8.6" date="2021-01-21">
+      <description>
+        <p>changelog since 1.8.5</p>
+
+        <ul>
+          <li>Fixed loading encoder presets in non-portable builds</li>
+          <li>Fix truncation of long group titles in the playlist</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.8.5" date="2021-01-09">
       <description>
         <p>changelog since 1.8.4</p>
