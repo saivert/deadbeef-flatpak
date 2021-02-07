@@ -6,6 +6,25 @@
   <name>DeaDBeeF</name>
   <content_rating type="oars-1.1" />
   <releases>
+    <release version="1.8.7" date="2021-02-06">
+      <description>
+        <p>changelog since 1.8.6</p>
+
+        <ul>
+          <li>Fixed: Pulseaudio crash after a non-critical recoverable error</li>
+          <li>Fixed: Hotkeys were sometimes not connecting to the correct UI plugins</li>
+          <li>Fixed: Hotkey action "Sort by title" was missing</li>
+          <li>Fixed: Unsupported ID3v2 frames are converted to supported frames instead of discarding</li>
+          <li>Fixed: MP4 crash when encountering unknown metadata fields</li>
+          <li>Fixed: Writing MP4 tags would corrupt the metadata, if the moov box is moving to the end of file</li>
+          <li>Fixed: Off-by-one error when loading unsynchronized ID3v2.3 and 2.2 tags (sktt@github)</li>
+          <li>Fixed: Parsing ALAC M4A files without relying on legacy 24-byte magic cookie</li>
+          <li>Fixed: Saving the player resume state whenever a song finishes playing</li>
+          <li>Fixed: ALSA deadlock / distortion bug caused by changing audio format at a wrong moment</li>
+          <li>Fixed: WMA+CUE crash</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.8.6" date="2021-01-21">
       <description>
         <p>changelog since 1.8.5</p>
