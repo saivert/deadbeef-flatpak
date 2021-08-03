@@ -2,7 +2,7 @@
     "app-id": "music.deadbeef.player",
     "branch": "stable",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "3.36",
+    "runtime-version": "3.38",
     "sdk": "org.gnome.Sdk",
     "command": "deadbeef",
     "finish-args": [
@@ -166,7 +166,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/DeaDBeeF-Player/deadbeef.git",
-                    "tag": "1.8.7"
+                    "tag": "1.8.8"
                 },
                 {
                     "type": "file",

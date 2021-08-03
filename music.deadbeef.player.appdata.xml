@@ -6,6 +6,36 @@
   <name>DeaDBeeF</name>
   <content_rating type="oars-1.1" />
   <releases>
+    <release version="1.8.8" date="2021-08-01">
+      <description>
+        <p>changelog since 1.8.7</p>
+
+        <ul>
+          <li>Fixed: A crash and file path issues in PSF plugin (greedysky)</li>
+          <li>Fixed: A crash when reading certain AAC files</li>
+          <li>Fixed: Reading and writing metadata in certain MP4 files, which didn't work before</li>
+          <li>Fixed: Finding a cuesheet when the path contains symlink</li>
+          <li>Fixed: %isplaying% and %ispaused% title formatting behavior</li>
+          <li>Fixed: Playback of raw AAC files with ID3v2 tags</li>
+          <li>Fixed: Infinite loop when trying to $replace an empty string using title formatting</li>
+          <li>Added: Handling of Disc subtitle frames in ID3v2 and APE tags (Toad King)</li>
+          <li>Added: New improved plugin preferences UI (Nicolai Syvertsen)</li>
+          <li>Added: Non-modal preferences window (Nicolai Syvertsen)</li>
+          <li>Added: $rgb() title formatting function (Nicolai Syvertsen)</li>
+          <li>Added: Group title colorization support via title formatting (Nicolai Syvertsen)</li>
+          <li>Added: Plugin report and filtering in Plugin list (Nicolai Syvertsen)</li>
+          <li>Added: Focusable playlist tabs with keyboard navigation support (Nicolai Syvertsen)</li>
+          <li>Added: Sorting plugin list alphabetically (Nicolai Syvertsen)</li>
+          <li>Added: Reading of WAV RIFF tags (Xinya Zhang)</li>
+          <li>Added: Improved album path handling, especially for Windows (Keith-Cancel)</li>
+          <li>Added: Drag-and-drop on the main window (Nicolai Syvertsen)</li>
+          <li>Added: Using scroll wheel with seek bar (Nicolai Syvertsen)</li>
+          <li>Added: "Play Next" context menu action (Natalie Stewart)</li>
+          <li>Added: Handling samplerates higher than 192KHz to pulseaudio</li>
+          <li>Added: Delete from disk dialog will highlight the Delete button as destructive action</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.8.7" date="2021-02-06">
       <description>
         <p>changelog since 1.8.6</p>
