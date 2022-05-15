@@ -6,6 +6,56 @@
   <name>DeaDBeeF</name>
   <content_rating type="oars-1.1" />
   <releases>
+    <release version="1.9.1" date="2022-05-14">
+      <description>
+        <p>1.9.1 is a hotfix release, to solve some build problems, and to restore the Belarussian translation.</p>
+
+        <p>Changelog since 1.9.0</p>
+
+        <ul>
+          <li>Fixed: The release tarball was missing some required files</li>
+          <li>Fixed: Restored Belarussian language support - thanks to @gimrock, @kai3341 and others for changing my mind about people of Belarus. Fuck lukashenko.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.9.0" date="2022-05-13">
+      <description>
+        <p>changelog since 1.8.8</p>
+
+        <ul>
+          <li>Fixed: WMA regression which caused corrupt playback</li>
+          <li>Fixed: Deadlock in ALSA plugin</li>
+          <li>Fixed: Mis-detection of raw AAC files as MP4 files</li>
+          <li>Fixed: Handling empty title formatting scripts</li>
+          <li>Fixed: Memory error when dragging playlist via Playlist Browser</li>
+          <li>Fixed: Keyboard nagivation issues across playlist tabs (Saivert)</li>
+          <li>Fixed: Playlist tabs and playlist customized colors bugs (Saivert)</li>
+          <li>Fixed: Paused state was not persisted correctly after force-quitting</li>
+          <li>Fixed: Regression which broke musepack seeking</li>
+          <li>Fixed: Crash when notification artwork could not be found</li>
+          <li>Fixed: Poor performance when saving playlist and configuration files</li>
+          <li>Fixed: sndfile not opening files because of uninitialized memory access bug</li>
+          <li>Fixed: Crash when removing tracks from playlist while they&#8217;re playing</li>
+          <li>Fixed: Rendering group titles with blank text</li>
+          <li>Fixed: Delay activation of a playlist tab during drag-drop over the tab bar</li>
+          <li>Fixed: ᵣussian and ᵦelarussian languages are no longer supported</li>
+          <li>Added: Long file seeking support for Opus and FFMPEG</li>
+          <li>Added: HTTPS support for vfs_curl in portable builds, via libmbedtls</li>
+          <li>Added: Design mode for CocoaUI</li>
+          <li>Added: New Scope and Spectrum Analyzer visualizations</li>
+          <li>Added: Visualization appearance preferences pane</li>
+          <li>Added: New album art loader</li>
+          <li>Added: Configurable volume bar scale (dB, linear, cubic) via context menu (Saivert)</li>
+          <li>Added: Title formatting $year(time) function</li>
+          <li>Added: GTK UI for editing a chosen field of multiple selected tracks, in a table interface</li>
+          <li>Added: Creating new playlist via clicking the &#8220;+&#8221; button in the playlist tab strip (Saivert)</li>
+          <li>Added: Improved DSP preferences GTK UI (Saivert)</li>
+          <li>Added: Improved handling of invalid MP3 files</li>
+          <li>Added: Last.fm scrobbler will use HTTPS by default</li>
+          <li>Glory to Ukraine! 💛💙</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.8.8" date="2021-08-01">
       <description>
         <p>changelog since 1.8.7</p>

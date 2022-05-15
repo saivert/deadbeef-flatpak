@@ -166,7 +166,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/DeaDBeeF-Player/deadbeef.git",
-                    "commit": "dae74fdcce35d5713ff740332b567c18c89a8398"
+                    "commit": "4dd17a826586bdc398b9f890f3fdfe2c6dccb5c9"
                 },
                 {
                     "type": "file",
@@ -190,7 +190,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/saivert/ddb_output_pulse2.git",
-                    "branch": "v1.2"
+                    "branch": "master"
                 },
                 {
                     "type": "patch",
