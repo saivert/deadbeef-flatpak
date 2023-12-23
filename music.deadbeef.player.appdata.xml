@@ -6,6 +6,114 @@
   <name>DeaDBeeF</name>
   <content_rating type="oars-1.1" />
   <releases>
+    <release version="1.9.6" date="2023-11-07">
+      <description>
+        <p>Changelog since 1.9.5</p>
+
+        <ul>
+          <li>Fixed: Drawing spectrum analyzer in discrete frequencies mode</li>
+          <li>Fixed: Handling the option to enter archives when scanning folders (fudanchii)</li>
+          <li>Fixed: Playback performance issue when searching in large playlist</li>
+          <li>Fixed: Possible crash when starting playback with ALSA plugin</li>
+          <li>Fixed: Shuffle albums was not using Album Artist</li>
+          <li>Fixed: Title formatting failure with large calculated values</li>
+          <li>Fixed: Loading of small album art image files</li>
+          <li>Fixed: MP4 parser failing to read/write certain tags correctly</li>
+          <li>Fixed: Handling of title-formatted paths</li>
+          <li>Fixed: A bug when editing metadata in multiple selected tracks</li>
+          <li>Fixed: OSD notification reuse by default, with an option to disable</li>
+          <li>Added: Bit depth override option (HiFiPhile)</li>
+          <li>Added: DSD DoP support for ALSA/FFMPEG plugins (HiFiPhile)</li>
+          <li>Added: $put, $puts, $get title formatting functions (Robin Ekman)</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.9.5" date="2023-02-19">
+      <description>
+        <p>Changelog since 1.9.4</p>
+
+        <ul>
+          <li>Fixed: GME chiptune voice muting was affecting converter / replaygain scanner</li>
+          <li>Fixed: SID chiptune voice muting was affecting converter / replaygain scanner</li>
+          <li>Fixed: SID stereo was not working the way it was intended</li>
+          <li>Fixed: Wave format conversion regressions, which could lead to wrong channels mapping</li>
+          <li>Fixed: Converter race condition bug when checking whether a directory exists (dakeryas)</li>
+          <li>Fixed: Album art fetching for tracks with multiple artists</li>
+          <li>Fixed: GTK warning when opening track properties</li>
+          <li>Fixed: Prompting before deleting playlist via middle mouse button</li>
+          <li>Fixed: Album art left/right/center alignment in GTKUI</li>
+          <li>Fixed: Removed embedded album art size limit for ID3v2 tags</li>
+          <li>Fixed: Deadlock when trying to delete files from disk</li>
+          <li>Fixed: Mute functionality for output plugins with their own volume control</li>
+          <li>Fixed: Switching to previous/next track after the current track is removed</li>
+          <li>Fixed: Incorrect playlist affected by hotkeys</li>
+          <li>Fixed: Unsynchronized ID3v2 tag loading (credit: Robin Seth Ekman)</li>
+          <li>Fixed: Spectrum analyzer buffer overflow</li>
+          <li>Fixed: Deadlock when removing multiple selected tracks while one of them is playing</li>
+          <li>Added: Pipewire output plugin (saivert)</li>
+          <li>Added: LibRetro resampling plugin (toadking)</li>
+          <li>Added: Chiptune voice muting in DUMB plugin</li>
+          <li>Added: Improved drawing of spectrum analyzer</li>
+          <li>Added: $itematindex(index,value) function to title formatting, get value by index from multivalue fields</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.9.4" date="2022-12-17">
+      <description>
+        <p>Changelog since 1.9.3</p>
+
+        <ul>
+          <li>Fixed: Deadlock when playing network streams</li>
+          <li>Fixed: Handling multi-value genre in ID3v2</li>
+          <li>Fixed: Will fully reinitialize ALSA device when changing output format, to be compatible with more DACs</li>
+          <li>Fixed: Duplicate playlist menu item was not showing</li>
+          <li>Fixed: A random crash in visualization code</li>
+          <li>Added: Customizable visualization background color for GTKUI</li>
+          <li>Added: 64-bit seeking support in AAC, ALAC, Sndfile, Musepack, MP3, WMA, Vorbis</li>
+          <li>Added: Embedded album art from OGG files</li>
+          <li>Added: When double clicking a playlist in Playlist browser, will play the first track in the shuffle queue, according to current settings (pappnu)</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.9.3" date="2022-11-07">
+      <description>
+        <p>Changelog since 1.9.2</p>
+
+        <ul>
+          <li>Fixed: OpenBSD compatibility / warnings (Brad Smith)</li>
+          <li>Fixed: Crash when loading certain malformed cuesheets</li>
+          <li>Fixed: API behavior change regression causing certain plugins to malfunction</li>
+          <li>Added: Support for building with FFMPEG 5.0 (xuzhen)</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.9.2" date="2022-09-21">
+      <description>
+        <p>Changelog since 1.9.1</p>
+
+        <ul>
+          <li>Fixed: Many race conditions, deadlocks and crashes</li>
+          <li>Fixed: Crash when reading metadata of some .SPU files</li>
+          <li>Fixed: Config file content was repeated twice</li>
+          <li>Fixed: Default album art max file size increased to 40MB (Dakeryas)</li>
+          <li>Fixed: Reading some DTS files which require a larger buffer when probing</li>
+          <li>Fixed: Noise was played in the beginning of DTS files</li>
+          <li>Fixed: Default cddb server changed to gnudb.gnudb.org:8880</li>
+          <li>Fixed: Crash when playing certain .AY files</li>
+          <li>Fixed: Playlist corruption when sorting by random</li>
+          <li>Fixed: Crash in the sndfile plugin</li>
+          <li>Fixed: Spectrum analyzer samplerate bug</li>
+          <li>Fixed: Visualization buffer out-of-bounds access</li>
+          <li>Fixed: Multichannel down-mixing bug</li>
+          <li>Added: Notification displaying compatibility with KDE 5.23.5</li>
+          <li>Added: GTKUI oscilloscope rendering with anti-aliasing</li>
+          <li>Added: Selection Properties widget configurable to display metadata, properties, or both (elementdavv)</li>
+          <li>Added: Toggle Pause action in the Deadbeef.desktop file</li>
+          <li>Added: Confirmation dialog when removing a playlist using hotkey (Johannes Wikner)</li>
+          <li>Added: Improved Sort By -> Custom dialog (Robin Seth Ekman)</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.9.1" date="2022-05-14">
       <description>
         <p>1.9.1 is a hotfix release, to solve some build problems, and to restore the Belarussian translation.</p>
@@ -20,7 +128,7 @@
     </release>
     <release version="1.9.0" date="2022-05-13">
       <description>
-        <p>changelog since 1.8.8</p>
+        <p>Changelog since 1.8.8</p>
 
         <ul>
           <li>Fixed: WMA regression which caused corrupt playback</li>
@@ -58,7 +166,7 @@
     </release>
     <release version="1.8.8" date="2021-08-01">
       <description>
-        <p>changelog since 1.8.7</p>
+        <p>Changelog since 1.8.7</p>
 
         <ul>
           <li>Fixed: A crash and file path issues in PSF plugin (greedysky)</li>
@@ -88,7 +196,7 @@
     </release>
     <release version="1.8.7" date="2021-02-06">
       <description>
-        <p>changelog since 1.8.6</p>
+        <p>Changelog since 1.8.6</p>
 
         <ul>
           <li>Fixed: Pulseaudio crash after a non-critical recoverable error</li>
@@ -107,7 +215,7 @@
     </release>
     <release version="1.8.6" date="2021-01-21">
       <description>
-        <p>changelog since 1.8.5</p>
+        <p>Changelog since 1.8.5</p>
 
         <ul>
           <li>Fixed loading encoder presets in non-portable builds</li>
@@ -117,7 +225,7 @@
     </release>
     <release version="1.8.5" date="2021-01-09">
       <description>
-        <p>changelog since 1.8.4</p>
+        <p>Changelog since 1.8.4</p>
 
         <ul>
           <li>Added the new ISO/IEC Base Media File Format library MP4P for working with MP4 files, which removes MP4FF dependency</li>
@@ -147,7 +255,7 @@
     </release>
     <release version="1.8.4" date="2020-07-28">
       <description>
-        <p>changelog since 1.8.3</p>
+        <p>Changelog since 1.8.3</p>
 
         <ul>
           <li>Soundtouch plugin has been updated, and is now included in the releases</li>
@@ -171,7 +279,7 @@
     </release>
     <release version="1.8.3" date="2020-03-19">
       <description>
-        <p>changelog since 1.8.2</p>
+        <p>Changelog since 1.8.2</p>
 
         <ul>
         <li>Fixed a CD Text reading issue</li>
@@ -275,7 +383,7 @@
       <p>DeaDBeeF (as in 0xDEADBEEF) is a modular audio player for GNU/Linux, *BSD, OpenSolaris, macOS, and other UNIX-like systems.</p>
       <p>DeaDBeeF lets you play variety of audio formats, convert between them, customize the UI almost any way you want, and use many additional plugins which can extend it even more.</p>
   </description>
-  <url type="homepage">http://deadbeef.sf.net/</url>
+  <url type="homepage">https://deadbeef.sf.net/</url>
   <url type="bugtracker">https://github.com/deadbeef-player/deadbeef/issues</url>
   <url type="help">https://github.com/deadbeef-player/deadbeef/wiki</url>
   <screenshots>
@@ -286,4 +394,5 @@
   <provides>
     <binary>deadbeef</binary>
   </provides>
+  <launchable type="desktop-id">music.deadbeef.player.desktop</launchable>
 </component>
