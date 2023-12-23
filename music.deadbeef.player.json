@@ -2,8 +2,11 @@
     "app-id": "music.deadbeef.player",
     "branch": "stable",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "3.38",
+    "runtime-version": "43",
     "sdk": "org.gnome.Sdk",
+    "sdk-extensions": [
+        "org.freedesktop.Sdk.Extension.llvm14"
+    ],
     "command": "deadbeef",
     "finish-args": [
         "--share=ipc",
@@ -24,6 +27,10 @@
     "rename-icon": "deadbeef",
     "rename-desktop-file": "deadbeef.desktop",
     "cleanup": [ "/include", "*.la" ],
+    "build-options": {
+        "append-path": "/usr/lib/sdk/llvm14/bin",
+        "prepend-ld-library-path": "/usr/lib/sdk/llvm14/lib"
+    },
     "modules": [
         "shared-modules/intltool/intltool-0.51.json",
         {
@@ -31,12 +38,12 @@
         },
         {
             "name": "libjansson",
-            "buildsystem": "autotools",
+            "buildsystem": "cmake",
             "sources": [
                 {
-                    "type": "archive",
-                    "url": "http://www.digip.org/jansson/releases/jansson-2.12.tar.gz",
-                    "sha256": "5f8dec765048efac5d919aded51b26a32a05397ea207aa769ff6b53c7027d2c9"
+                    "type": "git",
+                    "url": "https://github.com/akheron/jansson.git",
+                    "tag": "v2.14"
                 }
             ]
         },
@@ -58,7 +65,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/xiph/opusfile.git",
-                    "tag": "v0.11"
+                    "tag": "v0.12"
                 }
             ]
         },
@@ -126,7 +133,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/apple/swift-corelibs-libdispatch.git",
-                    "tag": "swift-5.3-RELEASE"
+                    "tag": "swift-5.7.1-RELEASE"
                 },
                 {
                     "type": "patch",
