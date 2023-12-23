@@ -15,8 +15,9 @@ jobs:
       image: bilelmoussaoui/flatpak-github-actions:gnome-44
       options: --privileged
     steps:
-    - uses: actions/checkout@v3
-    - run: git submodule update --init --recursive
+    - uses: actions/checkout@v4
+      with:
+        submodules: recursive
     - uses: flatpak/flatpak-github-actions/flatpak-builder@v6.1
       with:
         bundle: deadbeef.flatpak
