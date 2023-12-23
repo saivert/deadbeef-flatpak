@@ -1,0 +1,30 @@
+name: CI
+on:
+  push:
+    branches: [main]
+    tags: 
+      - '*'
+  pull_request:
+permissions:
+  contents: write
+jobs:
+  flatpak:
+    name: "Flatpak"
+    runs-on: ubuntu-latest
+    container:
+      image: bilelmoussaoui/flatpak-github-actions:gnome-44
+      options: --privileged
+    steps:
+    - uses: actions/checkout@v3
+    - run: git submodule update --init --recursive
+    - uses: flatpak/flatpak-github-actions/flatpak-builder@v6.1
+      with:
+        bundle: deadbeef.flatpak
+        manifest-path: music.deadbeef.player-master.json
+        cache-key: flatpak-builder-${{ github.sha }}
+    - name: Release
+      uses: softprops/action-gh-release@v1
+      if: startsWith(github.ref, 'refs/tags/')
+      with:
+        files: pwvucontrol.flatpak
+
