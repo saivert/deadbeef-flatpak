@@ -22,6 +22,7 @@
         "--filesystem=xdg-run/dconf",
         "--filesystem=xdg-run/deadbeef:create",
         "--filesystem=~/.config/dconf:ro",
+        "--filesystem=xdg-run/pipewire-0:ro",
         "--env=DCONF_USER_CONFIG_DIR=.config/dconf"
     ],
     "rename-icon": "deadbeef",

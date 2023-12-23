@@ -2,7 +2,7 @@
     "app-id": "music.deadbeef.player",
     "branch": "master",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "43",
+    "runtime-version": "44",
     "sdk": "org.gnome.Sdk",
     "sdk-extensions": [
         "org.freedesktop.Sdk.Extension.llvm14"
@@ -22,6 +22,7 @@
         "--filesystem=xdg-run/dconf",
         "--filesystem=xdg-run/deadbeef:create",
         "--filesystem=~/.config/dconf:ro",
+        "--filesystem=xdg-run/pipewire-0:ro",
         "--env=DCONF_USER_CONFIG_DIR=.config/dconf"
     ],
     "rename-icon": "deadbeef",
@@ -173,7 +174,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/DeaDBeeF-Player/deadbeef.git",
-                    "commit": "4dd17a826586bdc398b9f890f3fdfe2c6dccb5c9"
+                    "branch": "master"
                 },
                 {
                     "type": "file",
