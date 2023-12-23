@@ -1,4 +1,4 @@
-name: CI
+name: CI-release-on-new-tag
 on:
   push:
     branches: [main]
