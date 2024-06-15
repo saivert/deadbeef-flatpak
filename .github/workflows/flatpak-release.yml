@@ -13,19 +13,19 @@ jobs:
     name: "Flatpak"
     runs-on: ubuntu-latest
     container:
-      image: bilelmoussaoui/flatpak-github-actions:gnome-44
+      image: bilelmoussaoui/flatpak-github-actions:gnome-45
       options: --privileged
     steps:
     - uses: actions/checkout@v4
       with:
         submodules: recursive
-    - uses: flatpak/flatpak-github-actions/flatpak-builder@v6.1
+    - uses: flatpak/flatpak-github-actions/flatpak-builder@v6.3
       with:
         bundle: deadbeef.flatpak
         manifest-path: music.deadbeef.player-master.json
         cache-key: flatpak-builder-${{ github.sha }}
     - name: Release
-      uses: softprops/action-gh-release@v1
+      uses: softprops/action-gh-release@v2
       if: startsWith(github.ref, 'refs/tags/')
       with:
         files: deadbeef.flatpak
