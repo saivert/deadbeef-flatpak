@@ -127,6 +127,7 @@
             },
             "config-opts": [
             	"-DCMAKE_BUILD_TYPE=RelWithDebInfo",
+                "-DCMAKE_INSTALL_LIBDIR=/app/lib",
             	"-DBlocksRuntime_INCLUDE_DIR=/app/include",
             	"-DBlocksRuntime_LIBRARIES=/app/lib/libBlocksRuntime.so"
             ],
