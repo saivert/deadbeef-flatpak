@@ -19,7 +19,7 @@ jobs:
     - uses: actions/checkout@v4
       with:
         submodules: recursive
-    - uses: flatpak/flatpak-github-actions/flatpak-builder@v6.3
+    - uses: flatpak/flatpak-github-actions/flatpak-builder@v6
       with:
         bundle: deadbeef.flatpak
         manifest-path: music.deadbeef.player-master.json
