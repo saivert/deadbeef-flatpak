@@ -2,10 +2,10 @@
     "app-id": "music.deadbeef.player",
     "branch": "master",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "44",
+    "runtime-version": "47",
     "sdk": "org.gnome.Sdk",
     "sdk-extensions": [
-        "org.freedesktop.Sdk.Extension.llvm14"
+        "org.freedesktop.Sdk.Extension.llvm18"
     ],
     "command": "deadbeef",
     "finish-args": [
@@ -29,8 +29,8 @@
     "rename-desktop-file": "deadbeef.desktop",
     "cleanup": [ "/include", "*.la" ],
     "build-options": {
-        "append-path": "/usr/lib/sdk/llvm14/bin",
-        "prepend-ld-library-path": "/usr/lib/sdk/llvm14/lib"
+        "append-path": "/usr/lib/sdk/llvm18/bin",
+        "prepend-ld-library-path": "/usr/lib/sdk/llvm18/lib"
     },
     "modules": [
         "shared-modules/intltool/intltool-0.51.json",
