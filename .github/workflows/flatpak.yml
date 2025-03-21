@@ -11,9 +11,10 @@ jobs:
       image: docker.io/bilelmoussaoui/flatpak-github-actions
       options: --privileged
     steps:
-    - uses: actions/checkout@v2
-    - run: git submodule update --init --recursive
-    - uses: bilelmoussaoui/flatpak-github-actions@v2
+    - uses: actions/checkout@v4
+      with:
+        submodules: recursive
+    - uses: flatpak/flatpak-github-actions/flatpak-builder@v6.3
       with:
         bundle: "deadbeef.flatpak"
         manifest-path: "music.deadbeef.player-master.json"
