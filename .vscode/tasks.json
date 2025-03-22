@@ -6,7 +6,7 @@
         {
             "label": "Build flatpak (master)",
             "type": "shell",
-            "command": "flatpak-builder --repo=local_repo flatpak-build music.deadbeef.player-master.json",
+            "command": "flatpak-builder --force-clean --repo=local_repo flatpak-build music.deadbeef.player-master.json",
             "problemMatcher": []
         }
     ]
