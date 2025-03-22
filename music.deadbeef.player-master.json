@@ -182,10 +182,6 @@
                     "path": "music.deadbeef.player.appdata.xml"
                 },
                 {
-                    "type": "file",
-                    "path": "music.deadbeef.player.desktop"
-                },
-                {
                     "type": "patch",
                     "path": "default-output-plugin.patch"
                 }
