@@ -5,7 +5,7 @@
     "**/node_modules/*/**": true,
     "**/.flatpak-builder/**": true,
     "**/mybuild*/**": true,
-    "**/myrepo/**": true
+    "**/myrepo/**": true,
+    "**/local_repo/**": true,
   }
-
 }
