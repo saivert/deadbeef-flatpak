@@ -9,6 +9,39 @@
   <name>DeaDBeeF</name>
   <content_rating type="oars-1.1" />
   <releases>
+      <release version="1.10.0" date="2025-03-25">
+      <description>
+        <p>Changelog since 1.9.6</p>
+
+        <ul>
+          <li>Fixed: Memory leak affecting DSD (Toad King)</li>
+          <li>Fixed: deadbeef.desktop format violations (Viorel Munteanu)</li>
+          <li>Fixed: Spectrum analyzer drawing bugs</li>
+          <li>Fixed: Scope drawing bugs</li>
+          <li>Fixed: Finding album art image in ogg files</li>
+          <li>Fixed: Deadlock (hang) when clearing a playlist</li>
+          <li>Fixed: A number of issues with album art</li>
+          <li>Fixed: A number of issues with OSD notifications</li>
+          <li>Fixed: Toggle-pause behavior to do nothing when playback is stopped</li>
+          <li>Fixed: CDText issues (Warepire)</li>
+          <li>Fixed: Implementation of $longer title formatting function</li>
+          <li>Fixed: Handling of escape sequences in $cut title formatting function</li>
+          <li>Fixed: Current track playback indication in playlist browser</li>
+          <li>Fixed: Crash and memory leak when saving M3U playlists</li>
+          <li>Fixed: Crash after drag-dropping from search window</li>
+          <li>Added: Media library: find music in specified folders, and display in a tree</li>
+          <li>Added: Undo/redo playlist editing operations</li>
+          <li>Added: Commands for navigating to next/previous/random album with respect to shuffle mode (Robin Seth Ekman)</li>
+          <li>Added: TORY frame support for ID3v2.3</li>
+          <li>Added: FFMPEG 7 support (Christopher Snowhill)</li>
+          <li>Added: Separate config file for storing secrets (lastfm password)</li>
+          <li>Added: Support for relative paths when loading DBPL playlists (Robin Ekman)</li>
+          <li>Added: EAC3 support to ffmpeg plugin</li>
+          <li>Added: Updated adplug library to latest upstream version (Thomas Jepp)</li>
+          <li>Added: An option to disable log window auto showing after errors</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.9.6" date="2023-11-07">
       <description>
         <p>Changelog since 1.9.5</p>
