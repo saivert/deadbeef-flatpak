@@ -3,3 +3,4 @@ mybuild*/
 .flatpak-builder/
 /scratch
 /local_repo
+/notes.txt

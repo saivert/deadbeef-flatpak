@@ -2,10 +2,10 @@
     "app-id": "music.deadbeef.player",
     "branch": "stable",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "44",
+    "runtime-version": "47",
     "sdk": "org.gnome.Sdk",
     "sdk-extensions": [
-        "org.freedesktop.Sdk.Extension.llvm14"
+        "org.freedesktop.Sdk.Extension.llvm18"
     ],
     "command": "deadbeef",
     "finish-args": [
@@ -15,22 +15,18 @@
         "--share=network",
         "--socket=pulseaudio",
         "--own-name=org.mpris.MediaPlayer2.DeaDBeeF",
+        "--talk-name=org.freedesktop.Notifications",
         "--filesystem=xdg-music",
         "--filesystem=~/.local/lib64/deadbeef",
-        "--talk-name=ca.desrt.dconf",
-        "--talk-name=org.freedesktop.Notifications",
-        "--filesystem=xdg-run/dconf",
         "--filesystem=xdg-run/deadbeef:create",
-        "--filesystem=~/.config/dconf:ro",
-        "--filesystem=xdg-run/pipewire-0:ro",
-        "--env=DCONF_USER_CONFIG_DIR=.config/dconf"
+        "--filesystem=xdg-run/pipewire-0:ro"
     ],
     "rename-icon": "deadbeef",
     "rename-desktop-file": "deadbeef.desktop",
     "cleanup": [ "/include", "*.la" ],
     "build-options": {
-        "append-path": "/usr/lib/sdk/llvm14/bin",
-        "prepend-ld-library-path": "/usr/lib/sdk/llvm14/lib"
+        "append-path": "/usr/lib/sdk/llvm18/bin",
+        "prepend-ld-library-path": "/usr/lib/sdk/llvm18/lib"
     },
     "modules": [
         "shared-modules/intltool/intltool-0.51.json",
@@ -174,15 +170,11 @@
                 {
                     "type": "git",
                     "url": "https://github.com/DeaDBeeF-Player/deadbeef.git",
-                    "tag": "1.9.6"
+                    "tag": "1.10.0"
                 },
                 {
                     "type": "file",
                     "path": "music.deadbeef.player.appdata.xml"
-                },
-                {
-                    "type": "file",
-                    "path": "music.deadbeef.player.desktop"
                 },
                 {
                     "type": "patch",
@@ -198,7 +190,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/saivert/ddb_output_pulse2.git",
-                    "branch": "master"
+                    "tag": "v1.3"
                 },
                 {
                     "type": "patch",

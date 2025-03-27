@@ -8,6 +8,12 @@
             "type": "shell",
             "command": "flatpak-builder --force-clean --repo=local_repo flatpak-build music.deadbeef.player-master.json",
             "problemMatcher": []
+        },
+        {
+            "label": "Run flatpak build",
+            "type": "shell",
+            "command": "flatpak update && flatpak run music.deadbeef.player",
+            "problemMatcher": []
         }
     ]
 }

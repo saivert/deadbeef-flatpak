@@ -15,15 +15,11 @@
         "--share=network",
         "--socket=pulseaudio",
         "--own-name=org.mpris.MediaPlayer2.DeaDBeeF",
+        "--talk-name=org.freedesktop.Notifications",
         "--filesystem=xdg-music",
         "--filesystem=~/.local/lib64/deadbeef",
-        "--talk-name=ca.desrt.dconf",
-        "--talk-name=org.freedesktop.Notifications",
-        "--filesystem=xdg-run/dconf",
         "--filesystem=xdg-run/deadbeef:create",
-        "--filesystem=~/.config/dconf:ro",
-        "--filesystem=xdg-run/pipewire-0:ro",
-        "--env=DCONF_USER_CONFIG_DIR=.config/dconf"
+        "--filesystem=xdg-run/pipewire-0:ro"
     ],
     "rename-icon": "deadbeef",
     "rename-desktop-file": "deadbeef.desktop",
@@ -195,7 +191,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/saivert/ddb_output_pulse2.git",
-                    "branch": "master"
+                    "tag": "v1.3"
                 },
                 {
                     "type": "patch",
