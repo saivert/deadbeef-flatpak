@@ -21,7 +21,7 @@ jobs:
     - uses: flatpak/flatpak-github-actions/flatpak-builder@v6
       with:
         bundle: deadbeef.flatpak
-        manifest-path: music.deadbeef.player-master.json
+        manifest-path: music.deadbeef.player.json
         cache-key: flatpak-builder-${{ github.sha }}
     - name: Release
       uses: softprops/action-gh-release@v2
