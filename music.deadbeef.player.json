@@ -156,7 +156,7 @@
         {
             "name": "deadbeef",
             "buildsystem": "autotools",
-            "config-opts": ["--disable-alsa", "--disable-pulse", "--disable-oss", "CC=clang", "CXX=clang++"],
+            "config-opts": ["--disable-alsa", "--disable-pulse", "--disable-oss", "--disable-gtk2", "CC=clang", "CXX=clang++"],
             "build-options" : {
                 "cflags": "-DUSE_GTK_NATIVE_FILE_CHOOSER",
                 "env": {
