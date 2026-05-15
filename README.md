@@ -1,5 +1,9 @@
 # deadbeef-flatpak
 
+This is my experimental flatpak manifest for building DeadBeef music player as a flatpak.
+
+# Notes
+
 DeaDBeeF support building with GTKNativeFileChooser which is utilized to support flatpak portals. Other than that the xdg-music (~/Music) folder is made available by default so it is not fully sandboxed.
 
 Portals does now support opening folders, but there is still no logic to automatically request both files in a cue/mp3 set (or similar). Opening a folder containing such a set does work but is counterintuitive. xdg-desktop-portals project is looking into this. Follow this [issue](https://github.com/flatpak/xdg-desktop-portal/issues/463) for more updates.
