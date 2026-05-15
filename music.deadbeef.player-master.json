@@ -2,15 +2,15 @@
     "app-id": "music.deadbeef.player",
     "branch": "master",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "47",
+    "runtime-version": "49",
     "sdk": "org.gnome.Sdk",
     "sdk-extensions": [
-        "org.freedesktop.Sdk.Extension.llvm18"
+        "org.freedesktop.Sdk.Extension.llvm20"
     ],
     "command": "deadbeef",
     "finish-args": [
         "--share=ipc",
-        "--socket=x11",
+        "--socket=fallback-x11",
         "--socket=wayland",
         "--share=network",
         "--socket=pulseaudio",
@@ -25,8 +25,8 @@
     "rename-desktop-file": "deadbeef.desktop",
     "cleanup": [ "/include", "*.la" ],
     "build-options": {
-        "append-path": "/usr/lib/sdk/llvm18/bin",
-        "prepend-ld-library-path": "/usr/lib/sdk/llvm18/lib"
+        "append-path": "/usr/lib/sdk/llvm20/bin",
+        "prepend-ld-library-path": "/usr/lib/sdk/llvm20/lib"
     },
     "modules": [
         "shared-modules/intltool/intltool-0.51.json",
@@ -36,6 +36,10 @@
         {
             "name": "libjansson",
             "buildsystem": "cmake",
+            "config-opts": [
+                "-DCMAKE_BUILD_TYPE=Release",
+                "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
+            ],
             "sources": [
                 {
                     "type": "git",
@@ -113,7 +117,7 @@
         },
         {
             "name": "libdispatch",
-            "buildsystem": "cmake",
+            "buildsystem": "cmake-ninja",
             "builddir": true,
             "build-options": {
                 "env": {
@@ -180,6 +184,12 @@
                 {
                     "type": "patch",
                     "path": "default-output-plugin.patch"
+                },
+                {
+                    "type": "shell",
+                    "commands": [
+                        "printf 'm4_define([DEADBEEF_VERSION], [%s (Flatpak)])\n' \"$(head -n1 build_data/VERSION)\" > build_data/version.m4"
+                    ]
                 }
             ]
         },

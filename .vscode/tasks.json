@@ -10,6 +10,12 @@
             "problemMatcher": []
         },
         {
+            "label": "Build flatpak (stable)",
+            "type": "shell",
+            "command": "flatpak-builder --force-clean --repo=local_repo flatpak-build music.deadbeef.player.json",
+            "problemMatcher": []
+        },
+        {
             "label": "Run flatpak build",
             "type": "shell",
             "command": "flatpak update && flatpak run music.deadbeef.player",

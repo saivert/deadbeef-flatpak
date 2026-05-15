@@ -9,6 +9,51 @@
   <name>DeaDBeeF</name>
   <content_rating type="oars-1.1" />
   <releases>
+      <release version="1.10.2" date="2026-03-16">
+      <description>
+        <p>Changelog since 1.10.1</p>
+
+        <ul>
+          <li>Fixed: Regression in replaygain scanner, producing INF for album gain</li>
+          <li>Added: MPRIS plugin is now part of DeaDBeeF, replacing global hotkeys</li>
+        </ul>
+      </description>
+    </release>
+      <release version="1.10.1" date="2026-03-08">
+      <description>
+        <p>Changelog since 1.10.0</p>
+
+        <ul>
+          <li>Fixed: Playlist auto-naming regression</li>
+          <li>Fixed: Multiple slowness and stability issues in medialib</li>
+          <li>Fixed: Artwork cover search order</li>
+          <li>Fixed: Crash when probing media files on stack-constrained systems</li>
+          <li>Fixed: Crash when loading certain malformed ID3v2 tags</li>
+          <li>Fixed: Fix stability issues in OSS plugin</li>
+          <li>Fixed: Lost edits when clicking Apply in track properties</li>
+          <li>Fixed: Known performance issues in Artwork</li>
+          <li>Fixed: Prevent total playtime to be rounded to int (Jakub Wasylków)</li>
+          <li>Fixed: Sample format conversion from float to int32</li>
+          <li>Fixed: Replaygain scanner memory leak</li>
+          <li>Fixed: Wrong title formatting/grouping in Folder mode</li>
+
+          <li>Added: Lyrics plugin</li>
+          <li>Added: Improved corruption recovery in AAC, APE, MP3, WMA files</li>
+          <li>Added: OPUS artwork support</li>
+          <li>Added: SID infinite looping</li>
+          <li>Added: New UI for DSP presets in Preferences</li>
+          <li>Added: An option to always resume in paused state (Jakub Wasylków)</li>
+          <li>Added: Enqueue action in file manager menus (dark-penguin)</li>
+          <li>Added: New album art display mode - Playing or Selected (Ed)</li>
+          <li>Added: Copy context menu action in Selection Properties (Ed)</li>
+          <li>Added: Action for opening DSP preferences (Ed)</li>
+          <li>Added: Stop After Queue mode (Ed)</li>
+          <li>Added: GTK3 is now default UI plugin, instead of GTK2</li>
+          <li>Added: FLAC (Ogg/FLAC) network streaming</li>
+          <li>Added: Mouse forward/backward buttons support (magusjanus)</li>
+        </ul>
+      </description>
+    </release>
       <release version="1.10.0" date="2025-03-25">
       <description>
         <p>Changelog since 1.9.6</p>
