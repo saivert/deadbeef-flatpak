@@ -9,6 +9,14 @@
   <name>DeaDBeeF</name>
   <content_rating type="oars-1.1" />
   <releases>
+    <release version="1.10.3" date="2026-06-10">
+      <description>
+        <p>Changelog since 1.10.2</p>
+        <ul>
+          <li>Fixed: Update mpg123 to 1.33.6, to fix a CVE</li>
+        </ul>
+      </description>
+    </release>
       <release version="1.10.2" date="2026-03-16">
       <description>
         <p>Changelog since 1.10.1</p>
